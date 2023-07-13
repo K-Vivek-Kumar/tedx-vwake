@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import NavigationBoard from "./Navboard";
+import Book from "./Book";
+import MemoriesAlbum from "./Memories";
 
 const Navbar = () => {
   const [ist, setIst] = useState(false);
@@ -66,6 +68,8 @@ const Navbar = () => {
         </div>
       </div>
       <NavigationBoard theme={isBlackTheme ? "black" : "red"} />
+      <Book theme={isBlackTheme ? "black" : "red"} />
+      <MemoriesAlbum />
     </nav>
   );
 };
