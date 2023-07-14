@@ -21,7 +21,7 @@ const NavigationBoard = (props: { theme: any }) => {
 
   const getBackgroundColor = () => {
     if (props.theme === "black") {
-      return "bg-black";
+      return "bg-slate-900";
     } else {
       return "bg-red-500";
     }

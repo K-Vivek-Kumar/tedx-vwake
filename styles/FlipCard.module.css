@@ -1,0 +1,80 @@
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px;
+}
+
+.flip-card-flipped .flip-card {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flip-card-front {
+  z-index: 2;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add other necessary styles for the components */
+
+.youtube-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.play-icon {
+  font-size: 32px;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.view-script-btn,
+.view-video-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background-color: #ff0000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.view-script-btn:hover,
+.view-video-btn:hover {
+  background-color: #c40000;
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
