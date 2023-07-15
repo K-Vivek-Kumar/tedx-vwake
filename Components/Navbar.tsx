@@ -8,6 +8,7 @@ import ReasonsToAttend from "./ReasonstoAttend";
 import Footer from "./Footer";
 import FooterRights from "./FooterRights";
 import FooterDeveloper from "./FooterDeveloper";
+import Memories from "./Memories";
 
 const Navbar = () => {
   const [ist, setIst] = useState(false);
@@ -86,6 +87,7 @@ const Navbar = () => {
           <Book theme={isBlackTheme ? "black" : "red"} />
           <ReasonsToAttend theme={isBlackTheme ? "black" : "red"} />
           <FlipCard />
+          <Memories />
           <Footer theme={isBlackTheme ? "black" : "red"} />
           <FooterRights theme={isBlackTheme ? "black" : "red"} />
           <FooterDeveloper theme={isBlackTheme ? "black" : "red"} />

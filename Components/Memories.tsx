@@ -1,129 +1,77 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
-const MemoriesAlbum = () => {
-  const imageUrls = [
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-    "https://images.unsplash.com/photo-1509114397022-ed747cca3f65",
-  ];
+const photos = [
+  "https://yt3.googleusercontent.com/K9e4vbIehtJwE9gqHbzbo3mr8CgNgYFPxY_sCLJImu9QvcrYV8S-t3Ef_14UWp863rKA-1qx_Q=s900-c-k-c0x00ffffff-no-rj",
+  "https://newsresolution.com/wp-content/uploads/2021/01/Nancy-Momoland-Singer-Age-height-Weight-Size-DOB-Boyfriends-Biography-1.jpg",
+  "https://www.pinkvilla.com/pics/480x480/nancy_momoland_main_wm_202209.png",
+  "https://wallpaperaccess.com/full/2980955.jpg",
+  "https://e1.pxfuel.com/desktop-wallpaper/774/902/desktop-wallpaper-emi-jennifer%E2%99%A1-on-momoland-nancy-nancy-momoland.jpg",
+  "https://www.celebface.in/wp-content/uploads/2020/06/Nancy-Momoland-Net-Worth.jpeg",
+  "https://aboutbiography.com/wp-content/uploads/2022/05/cropped-nancy-jewel-mcdonie-instagram.jpg",
+];
 
-  const firstRowImages = imageUrls.slice(0, Math.ceil(imageUrls.length / 2));
-  const secondRowImages = imageUrls.slice(Math.ceil(imageUrls.length / 2));
-
-  const firstRowRef = useRef<HTMLDivElement | null>(null);
-  const secondRowRef = useRef<HTMLDivElement | null>(null);
-
-  const [scrollInterval, setScrollInterval] = useState<NodeJS.Timeout | null>(
-    null
-  );
-
-  useEffect(() => {
-    const startScrolling = () => {
-      if (!scrollInterval) {
-        const interval = setInterval(scrollImages, 3000);
-        setScrollInterval(interval);
-      }
-    };
-
-    const stopScrolling = () => {
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-        setScrollInterval(null);
-      }
-    };
-
-    const scrollImages = () => {
-      const firstRowElement = firstRowRef.current;
-      const secondRowElement = secondRowRef.current;
-
-      if (firstRowElement && secondRowElement) {
-        const scrollDistance = firstRowElement.offsetWidth;
-
-        firstRowElement.scrollTo({
-          left: firstRowElement.scrollLeft + scrollDistance,
-          behavior: "smooth",
-        });
-
-        secondRowElement.scrollTo({
-          left: secondRowElement.scrollLeft - scrollDistance,
-          behavior: "smooth",
-        });
-
-        if (
-          firstRowElement.scrollLeft >=
-          firstRowElement.scrollWidth - scrollDistance
-        ) {
-          firstRowElement.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-
-        if (secondRowElement.scrollLeft <= 0) {
-          secondRowElement.scrollTo({
-            left: secondRowElement.scrollWidth,
-            behavior: "smooth",
-          });
-        }
-      }
-    };
-
-    startScrolling();
-
-    return () => {
-      stopScrolling();
-    };
-  }, [scrollInterval]);
-
+const Memories = () => {
   return (
-    <div className="w-full max-w-screen-lg mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-4">Memories</h1>
+    <div className="container mx-auto pb-4 px-4">
+      <h2 className="text-3xl font-bold text-center text-black my-8">
+        Memories
+      </h2>
       <div className="flex justify-center">
-        <div className="w-full md:w-1/2 overflow-hidden border border-gray-300 rounded-lg">
-          <div
-            className="flex items-center"
-            style={{ scrollBehavior: "smooth" }}
-            ref={firstRowRef}
+        <div className="w-full p-4 bg-white shadow-lg border border-gray-300 rounded-lg">
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={3000}
+            stopOnHover={true}
+            centerMode={true}
+            centerSlidePercentage={33.33}
+            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+              hasPrev && (
+                <button
+                  type="button"
+                  onClick={onClickHandler}
+                  title={label}
+                  className="absolute left-0 z-10 flex items-center justify-center w-8 h-8 -ml-8 text-white bg-black bg-opacity-50 rounded-full outline-none cursor-pointer focus:outline-none"
+                >
+                  &lt;
+                </button>
+              )
+            }
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+              hasNext && (
+                <button
+                  type="button"
+                  onClick={onClickHandler}
+                  title={label}
+                  className="absolute right-0 z-10 flex items-center justify-center w-8 h-8 -mr-8 text-white bg-black bg-opacity-50 rounded-full outline-none cursor-pointer focus:outline-none"
+                >
+                  &gt;
+                </button>
+              )
+            }
+            className="overflow-hidden"
           >
-            {firstRowImages.map((imageUrl, index) => (
+            {photos.map((photo, index) => (
               <div
                 key={index}
-                className="w-full h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url(${imageUrl})` }}
-              />
+                className="flex items-center justify-center h-96"
+              >
+                <img
+                  src={photo}
+                  alt={`Memory ${index}`}
+                  className="object-cover h-full mx-auto"
+                />
+              </div>
             ))}
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center mt-4">
-        <div className="w-full md:w-1/2 overflow-hidden border border-gray-300 rounded-lg">
-          <div
-            className="flex items-center"
-            style={{ scrollBehavior: "smooth" }}
-            ref={secondRowRef}
-          >
-            {secondRowImages.map((imageUrl, index) => (
-              <div
-                key={index}
-                className="w-full h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url(${imageUrl})` }}
-              />
-            ))}
-          </div>
+          </Carousel>
         </div>
       </div>
     </div>
   );
 };
 
-export default MemoriesAlbum;
+export default Memories;
