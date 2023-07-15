@@ -32,28 +32,19 @@ const NavigationBoard = (props: { theme: any }) => {
       <div className="container mx-auto px-4 py-4">
         <ul className="flex flex-wrap justify-evenly font-bold">
           <li>
-            <a
-              href="/events"
-              className={`flex items-center mx-2 ${getHoverColor()}`}
-            >
+            <a href="/" className={`flex items-center mx-2 ${getHoverColor()}`}>
               <FaCalendar className="mr-2" />
               Events
             </a>
           </li>
           <li>
-            <a
-              href="/team"
-              className={`flex items-center mx-2 ${getHoverColor()}`}
-            >
+            <a href="/" className={`flex items-center mx-2 ${getHoverColor()}`}>
               <FaUsers className="mr-2" />
               Team
             </a>
           </li>
           <li>
-            <a
-              href="/about"
-              className={`flex items-center mx-2 ${getHoverColor()}`}
-            >
+            <a href="/" className={`flex items-center mx-2 ${getHoverColor()}`}>
               <FaInfoCircle className="mr-2" />
               About Us
             </a>

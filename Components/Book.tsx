@@ -1,5 +1,3 @@
-import { defaultConfig } from "next/dist/server/config-shared";
-
 const HomepageItem = (props: any) => {
   const { theme } = props;
 

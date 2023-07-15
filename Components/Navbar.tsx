@@ -4,6 +4,10 @@ import NavigationBoard from "./Navboard";
 import Book from "./Book";
 import Footerlink from "./Footerlink";
 import FlipCard from "./FlipCard";
+import ReasonsToAttend from "./ReasonstoAttend";
+import Footer from "./Footer";
+import FooterRights from "./FooterRights";
+import FooterDeveloper from "./FooterDeveloper";
 
 const Navbar = () => {
   const [ist, setIst] = useState(false);
@@ -80,7 +84,11 @@ const Navbar = () => {
         >
           <NavigationBoard theme={isBlackTheme ? "black" : "red"} />
           <Book theme={isBlackTheme ? "black" : "red"} />
+          <ReasonsToAttend theme={isBlackTheme ? "black" : "red"} />
           <FlipCard />
+          <Footer theme={isBlackTheme ? "black" : "red"} />
+          <FooterRights theme={isBlackTheme ? "black" : "red"} />
+          <FooterDeveloper theme={isBlackTheme ? "black" : "red"} />
           <Footerlink theme={isBlackTheme ? "black" : "red"} />
         </div>
       </nav>

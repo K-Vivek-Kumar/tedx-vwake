@@ -16,7 +16,6 @@ const FlipCard: React.FC = () => {
 
   return (
     <div
-      className="mb-16"
       style={{
         display: "flex",
         justifyContent: "center",
@@ -25,14 +24,15 @@ const FlipCard: React.FC = () => {
     >
       <div
         style={{
-          width: "600px",
-          height: "400px",
+          width: "100%",
+          height: "600px",
           border: "1px solid #ccc",
           borderRadius: "8px",
           position: "relative",
           overflow: "hidden",
           perspective: "1000px",
         }}
+        className="m-4"
       >
         {/* Front side */}
         <div
@@ -56,15 +56,19 @@ const FlipCard: React.FC = () => {
                 alignItems: "center",
               }}
             >
+              <h2 className="text-4xl font-bold text-center text-black m-2">
+                Theme
+              </h2>
               <div
                 style={{
-                  width: "100%",
+                  width: "80%",
                   height: "70%",
                   backgroundColor: "#000",
                   position: "relative",
                 }}
               >
                 {/* Place your YouTube video component or iframe here */}
+
                 <div
                   style={{
                     width: "100%",
