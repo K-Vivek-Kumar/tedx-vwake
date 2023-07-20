@@ -7,8 +7,12 @@ const photos = [
   "https://newsresolution.com/wp-content/uploads/2021/01/Nancy-Momoland-Singer-Age-height-Weight-Size-DOB-Boyfriends-Biography-1.jpg",
   "https://www.pinkvilla.com/pics/480x480/nancy_momoland_main_wm_202209.png",
   "https://wallpaperaccess.com/full/2980955.jpg",
+  "https://e1.pxfuel.com/desktop-wallpaper/25/1012/desktop-wallpaper-nancy-momoland-mobile-nancy-momoland.jpg",
+  "https://e0.pxfuel.com/wallpapers/281/18/desktop-wallpaper-nancy-momoland-model-korean-dancer.jpg",
+  "https://e1.pxfuel.com/desktop-wallpaper/843/707/desktop-wallpaper-nancy-momoland-android-nancy-momoland.jpg",
+  "https://e0.pxfuel.com/wallpapers/791/320/desktop-wallpaper-momoland-nancy-japan2ndsingle-baam-nancy-jewel.jpg",
+  "https://e0.pxfuel.com/wallpapers/77/470/desktop-wallpaper-nancy-momoland-best-48154.jpg",
   "https://e1.pxfuel.com/desktop-wallpaper/774/902/desktop-wallpaper-emi-jennifer%E2%99%A1-on-momoland-nancy-nancy-momoland.jpg",
-  "https://www.celebface.in/wp-content/uploads/2020/06/Nancy-Momoland-Net-Worth.jpeg",
   "https://aboutbiography.com/wp-content/uploads/2022/05/cropped-nancy-jewel-mcdonie-instagram.jpg",
 ];
 

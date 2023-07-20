@@ -79,7 +79,7 @@ const FlipCard: React.FC = () => {
                   }}
                 >
                   <iframe
-                    src="https://www.youtube.com/embed/mtykbnJEDyA"
+                    src="https://www.youtube.com/embed/vsZUFsGzxcA"
                     title="YouTube Video"
                     width="100%"
                     height="100%"

@@ -6,7 +6,7 @@ const FooterDeveloper = (props: any) => {
   };
 
   return (
-    <div className="pb-24 text-center">
+    <div className="pb-24 text-center px-4">
       <p className={`${getTextColor()} text-sm`}>
         This website is developed by {developerName} as a part of
         TEDxIITHyderabad selection round.
